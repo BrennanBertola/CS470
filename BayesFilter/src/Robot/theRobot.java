@@ -476,7 +476,7 @@ public class theRobot extends JFrame {
         normalize();
 
         myMaps.updateProbs(probs); // call this function after updating your probabilities so that the
-                                   //  new probabilities will show up in the probability map on the GUI
+        //  new probabilities will show up in the probability map on the GUI
     }
     
     // This is the function you'd need to write to make the robot move using your AI;
