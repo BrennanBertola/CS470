@@ -37,16 +37,16 @@ class AIPlayer:
     def alphaBeta(self, board, depth, alpha, beta, isMax) -> (int, int):
         #AI has won
         if is_winning_state(board, self.player_number):
-            return 1000, None
+            return 100, None
         #AI has lost
         if is_winning_state(board, self.other_player_number):
-            return -1000, None
+            return -100, None
         #Game is a Draw
         if len(get_valid_moves(board)) == 0:
             return 0, None
-
         if depth == 0:
             return self.evaluation_function(board), None
+
         if isMax:
             v = float('-inf')
             moves = get_valid_moves(board)
@@ -133,6 +133,44 @@ class AIPlayer:
         print('MCTS chooses action', root.max_child())
         return root.max_child()
 
+    def exp_rec(self, board, depth, player) -> (int, int):
+        if is_winning_state(board, self.player_number):
+            return 150, None
+        #AI has lost
+        if is_winning_state(board, self.other_player_number):
+            return -300, None
+        #Game is a Draw
+        if len(get_valid_moves(board)) == 0:
+            return 0, None
+        if depth == 0:
+            return self.evaluation_function(board), None
+
+        if player == self.player_number:
+            moves = get_valid_moves(board)
+            max = float('-inf')
+            bestMoves = []
+            for move in moves:
+                newBoard = copy.deepcopy(board)
+                make_move(newBoard, move, self.player_number)
+                result, _ = self.exp_rec(newBoard, depth-1, self.other_player_number)
+                if result > max:
+                    max = result
+                    bestMoves = [move]
+                elif result == max:
+                    bestMoves.append(move)
+            return max, bestMoves
+
+        else:
+            moves = get_valid_moves(board)
+            percent = 1 / len(moves)
+            value = 0
+            for move in moves:
+                newBoard = copy.deepcopy(board)
+                make_move(newBoard, move, self.other_player_number)
+                result, _ = self.exp_rec(newBoard, depth-1, self.player_number)
+                value += percent*result
+            return value, _
+
     def get_expectimax_move(self, board):
         """
         Given the current state of the board, return the next move based on
@@ -154,12 +192,12 @@ class AIPlayer:
         RETURNS:
         The 0 based index of the column that represents the next move
         """
-        moves = get_valid_moves(board)
-        best_move = np.random.choice(moves)
+        results = self.exp_rec(board, self.depth_limit, self.player_number)
+        move = np.random.choice(results[1])
         
         #YOUR EXPECTIMAX CODE GOES HERE
 
-        return best_move
+        return move
 
 
     def countOccurances(self, board, value):

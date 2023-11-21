@@ -127,6 +127,7 @@ class Game:
                 else:
                     print(self.players[self.current_turn].player_string + ' wins!')
                 print('Game over!')
+                self.print_board()
             elif self.game_tied():
                 #Mark the game as over
                 self.game_over = True
@@ -134,12 +135,15 @@ class Game:
                     self.player_string.configure(text='Game ends in a tie!')
                 else:
                     print('Game ends in a tie!')
+                self.print_board()
             else:
                 self.current_turn = int(not self.current_turn)
                 if graphics:
                     self.player_string.configure(text=self.players[self.current_turn].name)
                 else:
+
                     print('Current Turn: ', self.players[self.current_turn].name, '  using symbol : ', symbols[self.players[self.current_turn].player_number])
+
 
     def update_board(self, move, player_num):
         if 0 in self.board[:,move]:
