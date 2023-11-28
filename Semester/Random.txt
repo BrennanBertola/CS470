@@ -1,0 +1,11 @@
+#Solution in 5-20 moves
+AA---o--bc-oXXbc-o-------------DDPPP
+----AA------XXbc-d--bc-d-OOOEE------
+-oabCCdoabefdoXXefPPP-gh----ghII----
+o-----o----poAAXXpQQQ--p--b-CC--bRRR
+---AA------bXX--cb----c-OOODD-------
+-----o-----o-XX--oaPPPBBa--QQQ------
+------OOOAAp--XXbp----bp---cDD---c--
+aOOOp-a-BBp-XXc-p---cqDD-EEq-fRRRq-f
+OOOapb--capbXXc-pd--QQQd---RRR----EE
+OOO-p-----p-XXa-p---aq----bq----bqCC

@@ -1,0 +1,11 @@
+#Solution in 10 moves
+-----a-----a---XXbOOOp-b--cpDD--cp--
+OOO--aBBPPPa-XXcd----cd---eQQQ--e---
+AABBCC--DDef--XXef--op----opGG--op--
+----------o-XX--oaPPP-oa-bCCDD-b----
+-OOO-a---b-aXXcb----c-----PPPd-----d
+AABBc-----co-XXpdo---pdo--epFF--eQQQ
+-----a---BBa-XX-cd--opcd--opEE--op--
+AABB-cDDOOOcp-XXe-p---e-p-fQQQ--f---
+o--PPPo-AABBoXX-c-----c-QQQDDe-----e
+o-aBB-o-a-cdo-XXcdEEf-----fPPP------

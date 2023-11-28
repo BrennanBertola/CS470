@@ -1,0 +1,11 @@
+#Solution in 15 Moves
+OOOAAb----cb-XXpc--DDpEE--fpGG--fQQQ
+a--o--a--o--XXbo--c-b-p-cdEEpf-dGGpf
+---oabPPPoab-XXo-c-----c--dQQQ--dRRR
+AAop----op--XXop------q--bCCq--b--q-
+AAOOObCC--db-pXXd--p-----peQQQFFe---
+---aBBOOOacp--XXcp--dEEp--dfGGQQQf--
+AA--o-BB--o-XX--ocpDDEEcpFFgHHpIIgJJ
+a---BBa-CCdeXXf-de-of-gh-oIIgh-oJJKK
+opabCCopab-dopXX-d--e--qFFe--qRRR--q
+AAb---CCb--oXX---o-dPPPo-d-eFFGG-e--

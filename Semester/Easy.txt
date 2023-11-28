@@ -1,0 +1,11 @@
+#Solution in 5 moves
+AABB----cdefXXcdef------------------
+OOOp-----pabXX-pab---CC-------------
+-aBBo--a-co-XX-co--p-DD--p-----p----
+AABBo---CCo-XX-do----d-----e-----e--
+--ao----ao--XXbo-c--b--c---DD-------
+----AA----BBXX--cd----cd-EEOOO------
+--oPPP--o-AA--oXXbc----bcQQQDD------
+oPPPAAo----boXX--bc-q---c-qRRR--q---
+-----o-----oXX---o---PPP-AAQQQ------
+----o-----oaXX--oa---PPP--------QQQ-
