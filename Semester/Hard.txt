@@ -1,11 +1,22 @@
 #Solution in 15 Moves
-OOOAAb----cb-XXpc--DDpEE--fpGG--fQQQ
-a--o--a--o--XXbo--c-b-p-cdEEpf-dGGpf
+-aBBc--ad-c-XXd-efOOO-efg---HHg-----
+---aBBOOOacp--XXcp--dEEp--dfGGQQQf--
+AAOOObCC--db-pXXd--p-----peQQQFFe---
 ---oabPPPoab-XXo-c-----c--dQQQ--dRRR
 AAop----op--XXop------q--bCCq--b--q-
-AAOOObCC--db-pXXd--p-----peQQQFFe---
----aBBOOOacp--XXcp--dEEp--dfGGQQQf--
 AA--o-BB--o-XX--ocpDDEEcpFFgHHpIIgJJ
 a---BBa-CCdeXXf-de-of-gh-oIIgh-oJJKK
+a--o--a--o--XXbo--c-b-p-cdEEpf-dGGpf
 opabCCopab-dopXX-d--e--qFFe--qRRR--q
 AAb---CCb--oXX---o-dPPPo-d-eFFGG-e--
+--aBBop-a-cop-XXcop--QQQRRRde----de-
+OOOp-a-BBpca-XXpcd-----d--eQQQ--e---
+AABBco---dco-XXd-o--peFF-gpe---gpHH-
+aBBcd-a--cd-XXeof---eof---go----g---
+--AAopBBCCopqdXXopqde---q-efGGRRRf--
+--AAbo-PPPbo--cXXo--cqDD---qEERRRq--
+AABB-cOOO--c--dXXeFFd--eg--hIIg--h--
+-aBBc--ad-c-XXd-efOOO-efg---HHg-----
+-OOOAA---p---XXpb-QQQpbc--dEEcFFdGG-
+OOOAAb----cb-XXpc--DDpEE--fpGG--fQQQ
+a-bOOOa-bPPP--XX-qCCDD-q-e-f-q-e-fGG

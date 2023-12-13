@@ -9,3 +9,13 @@ o-----o----poAAXXpQQQ--p--b-CC--bRRR
 aOOOp-a-BBp-XXc-p---cqDD-EEq-fRRRq-f
 OOOapb--capbXXc-pd--QQQd---RRR----EE
 OOO-p-----p-XXa-p---aq----bq----bqCC
+OOO-paBB--pa-cXXp--c-----de-FF-deQQQ
+-aOOOp-a--bp-XX-bp---c----dcEE--dQQQ
+-OOOAA---pqbXX-pqb---pqr-----r-----r
+o-a---o-a--bo-XXpbcQQQpdcefgpd-efgHH
+AAbo--p-bo--pXXo--pQQQc-----c-------
+-oa-BB-oa----oXXcdEEf-cd--fPPP------
+-aBBc--a-dceXXfdge--f-g---h-----h---
+-aBB-o-ap--oXXp--oq-p-CCqDD-e-q-FFe-
+---AAo-----o---XXo--bPPP--bcDD---c--
+--AABB---cd--XXcd-o--PPPo-----o-----

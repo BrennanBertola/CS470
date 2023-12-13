@@ -1,4 +1,5 @@
 #Solution in 5 moves
+a-OOO-a--b--XX-b---pCCDD-p-----p----
 AABB----cdefXXcdef------------------
 OOOp-----pabXX-pab---CC-------------
 -aBBo--a-co-XX-co--p-DD--p-----p----
@@ -9,3 +10,12 @@ AABBo---CCo-XX-do----d-----e-----e--
 oPPPAAo----boXX--bc-q---c-qRRR--q---
 -----o-----oXX---o---PPP-AAQQQ------
 ----o-----oaXX--oa---PPP--------QQQ-
+----AA----BBXXc--d--c--d--e--f--e--f
+-AA--o--b--oXXb--o--c-----c-------DD
+--ao----ao-bXXco-b--c-----------DD--
+-a-OOO-a-b--cXXb--c-----d--PPPd-----
+AA-op----opbXX-opb---------------QQQ
+-AA-----bo--XXbo----co----c------DD-
+--o--a--o--aXXo--b-----bc---d-cEE-d-
+--aBB---a-c--XX-c-o-DDEEo-----o-----
+---o-----o--XX-oa-----a-PPPBB---CC--

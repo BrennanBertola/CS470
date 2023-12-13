@@ -1,6 +1,8 @@
 import argparse
 import copy
 import sys
+import time
+from queue import PriorityQueue
 
 class Puzzle:
     def __init__(self, board):
@@ -36,7 +38,7 @@ class Puzzle:
     def makeMove(self, car: str, move: int):
 
         #get the index of the car
-        r, c = self.findIndex(self.board, car)
+        r, c = self.findIndex(car)
         inc = 1
 
         # if move is positve, we need other end of car
@@ -52,6 +54,8 @@ class Puzzle:
         if car.islower():
             offset = 0
             while True:
+                if r+offset > 5 or r+offset < 0:
+                    break
                 if self.board[r+offset][c] != car:
                     break
                 self.board[r+offset+move][c] = car
@@ -61,6 +65,8 @@ class Puzzle:
         else:
             offset = 0
             while True:
+                if c+offset > 5 or c+offset < 0:
+                    break
                 if self.board[r][c+offset] != car:
                     break
                 self.board[r][c+offset+move] = car
@@ -110,13 +116,86 @@ class Puzzle:
                         i += 1
         return moves
 
-    def solve(self):
-        pass
+class TreeNode:
+    def __init__(self, cost: int, puzzle: Puzzle, trace: list, givenHeuristic: str):
+        self.cost = cost
+        self.puzzle = puzzle
+        self.trace = trace
+        self.givenHeuristic = givenHeuristic
+        self.h = self.heuristic(self.givenHeuristic)
+        self.fValue = self.cost + self.h
+
+    def heuristic(self, heuristic='s') -> int:
+        if heuristic == 's':
+            row = self.puzzle.board[2]
+            carsInWay = set()
+            for cell in row:
+                if cell != 'X' and cell.isalpha():
+                    carsInWay.add(cell)
+            return len(carsInWay)
+        elif heuristic == 'c':
+            row = self.puzzle.board[2]
+            count = 0
+            carsInWay = set()
+            for i in range(len(row)):
+                cell = row[i]
+                if cell != 'X' and cell.isalpha():
+                    carsInWay.add(i)
+                    count += 1
+            moves = self.puzzle.getValidMoves()
+            for i in carsInWay:
+                car = self.puzzle.board[2][i]
+                carMoves = sorted(moves[car])
+                if len(carMoves) == 0:
+                    count+= 1
+                    continue
+                minMove = carMoves[0]
+                maxMove = carMoves[-1]
+
+                minClone:Puzzle = copy.deepcopy(self.puzzle)
+                minClone.makeMove(car, minMove)
+                maxClone:Puzzle = copy.deepcopy(self.puzzle)
+                maxClone.makeMove(car, maxMove)
+
+                if minClone.board[2][i] != '-' and maxClone.board[2][i] != '-':
+                    count += 1
+            return count
+
+        else:
+            print("Please enter valid heuristic")
+            sys.exit()
+
+    def __lt__(self, other):
+        return self.fValue < other.fValue
+
+
+def aStar(queue: PriorityQueue[TreeNode]):
+    visited = {}
+    solved = False
+
+    while not solved and not queue.empty():
+        currNode = queue.get()
+        visited[str(currNode.puzzle)] = True
+
+        if currNode.puzzle.isSolved():
+            solved = True
+            tmp = currNode.trace + [("X", "Out")]
+            print("Solution:", tmp)
+            print("Length:", len(tmp), '\n\n')
+        else:
+            moves = currNode.puzzle.getValidMoves()
+
+            for car in moves:
+                for move in moves[car]:
+                    newP = Puzzle(currNode.puzzle.board)
+                    newP.makeMove(car, move)
+                    if str(newP) not in visited:
+                        newNode = TreeNode(currNode.cost+1, newP, currNode.trace + [(car, move)], currNode.givenHeuristic)
+                        queue.put(newNode)
 
 
 #Used to help fill the test files with their puzzles
 def convertString(string: str):
-    string = "Puzzle string here"
     newString = ""
     for i in range(len(string)):
         if not string[i].isalpha():
@@ -149,13 +228,16 @@ def stringToBoard(string: str):
 
 def getOptions(args=sys.argv[1:]):
     parser = argparse.ArgumentParser(description="Rush Hour Solver.")
-    parser.add_argument('-f', metavar='FILENAME', type=str, help="File of puzzles to solve", default="")
-    parser.add_argument('-n', '--runs', type=int, help="Number of puzzles to run", default=10)
+    parser.add_argument('-f', '--file',  metavar='FILENAME', type=str, help="File of puzzles to solve", default="")
+    parser.add_argument('-n', '--runs', type=int, help="Number of puzzles to run", default=20)
     parser.add_argument('-p', "--puzzle", help="used to input a puzzle through the command line", default="")
+    parser.add_argument('-a', "--heuristic", help="used to select a heuristic", default="s")
     options = parser.parse_args(args)
     return options
 
 if __name__ == '__main__':
+    # tmp = ""
+    # convertString(tmp)
     options = getOptions()
 
     if options.puzzle != "":
@@ -173,6 +255,8 @@ if __name__ == '__main__':
     runCounter = 0
 
     print("Input File:", options.file)
+    start = time.time()
+    h = options.heuristic
     for puzzleString in file.readlines():
         #get rid of comments in the file
         if puzzleString[0] == '#':
@@ -185,3 +269,10 @@ if __name__ == '__main__':
         puzzle = Puzzle(board)
         print("current puzzle:\n" + str(puzzle))
 
+        pq = PriorityQueue()
+        node = TreeNode(0, puzzle, [], h)
+        pq.put(node)
+        aStar(pq)
+    end = time.time()
+    print("Total Time:", str(end-start))
+    print("Avg Time Per Puzzle:", str((end-start)/runCounter))

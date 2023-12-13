@@ -1,11 +1,21 @@
 #Solution in 10 moves
+-OOO-a---b-aXXcb----c-----PPPd-----d
 -----a-----a---XXbOOOp-b--cpDD--cp--
 OOO--aBBPPPa-XXcd----cd---eQQQ--e---
 AABBCC--DDef--XXef--op----opGG--op--
 ----------o-XX--oaPPP-oa-bCCDD-b----
--OOO-a---b-aXXcb----c-----PPPd-----d
 AABBc-----co-XXpdo---pdo--epFF--eQQQ
 -----a---BBa-XX-cd--opcd--opEE--op--
 AABB-cDDOOOcp-XXe-p---e-p-fQQQ--f---
 o--PPPo-AABBoXX-c-----c-QQQDDe-----e
 o-aBB-o-a-cdo-XXcdEEf-----fPPP------
+-OOOab----abXXc--d--c--d--e-----e---
+--ab----abCCXXd-----d---OOO-e-----e-
+--------AAo--XXbo-PPPbo---cQQQ--c---
+AABB-------ocXXp-oc--p-o--dpEE--dQQQ
+AABB-cDDOOOcp-XXe-p---e-p-fQQQ--f---
+--o-AA--o---XXo---pQQQ-rpBB--rp----r
+OOOp-----p--XXap----a---QQQBBc-----c
+a-bOOOa-bPPPXX-cq--DDcq----eq----e--
+AABBc---d-coXXd--o--e--o--e-FF----GG
+OOOab----ab-XXc-----c-----d-EE--d---
